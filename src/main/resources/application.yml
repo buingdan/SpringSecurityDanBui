@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    username: root
+    password: 291968
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring_security?createDatabaseIfNotExist=true
+  jackson:
+    default-property-inclusion: non_null
+  mvc:
+    log-resolved-exception: on
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: mysql
+
+application:
+  security:
+    jwt:
+      secret-key: B3pSB4hhA4ApRtJQVv/FXoKwsCKZtNQ3CM81G0sPS0tQ+eLsW+6W/EZwE2oEahQK
+      expiration: 86400000
+      refresh-token:
+        expiration: 604800000
